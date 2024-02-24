@@ -1,8 +1,8 @@
 body{
     background-color: rgb(64, 145, 199);
+    font-family:Arial, Helvetica, sans-serif;
 }
 h1{
-    font-family: sans-serif;
     font-weight: 900;
     font-size: 28pt;
     color: rgb(255, 255, 255);
@@ -33,11 +33,11 @@ h1{
 #cam{
     width: 25px;
     height: 25px;
-    border-radius: 100%;
+    border-radius: 50%;
     background-color: rgb(0, 0, 0);
     position: absolute;
     top: -15px;
-    left: 155px;
+    left: 160px;
 }
 #logoapp{
     display: flex;  
@@ -69,7 +69,6 @@ h1{
 }
 
 .reloj{
-    font-family: sans-serif;
     color: rgb(255, 255, 255);
     text-align: center;
 }
