@@ -15,7 +15,7 @@ h1{
     align-items: center;
     margin: auto;
     width: 350px;
-    height: 670px;
+    height: 700px;
     position:relative;
     border-radius: 20px;
     background-color: rgb(0, 0, 0);
@@ -23,7 +23,7 @@ h1{
 }
 #fondotlf{
     width: 295px;
-    height: 610px;
+    height: 630px;
     border-radius: 15px;
     background-color: rgb(68, 130, 20);
     padding: 15px;
@@ -31,12 +31,12 @@ h1{
     top: 15px;
 }
 #cam{
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     border-radius: 100%;
     background-color: rgb(0, 0, 0);
     position: absolute;
-    top: -10px;
+    top: -15px;
     left: 155px;
 }
 #logoapp{
@@ -44,7 +44,7 @@ h1{
     justify-content: center;
     width: 50px;
     position: absolute;
-    bottom: 30px;
+    bottom: 90px;
     right: 20px;
     padding: 0;
     border-style: none;
@@ -58,7 +58,7 @@ h1{
     justify-content: center;
     width: 50px;
     position: absolute;
-    bottom: 30px;
+    bottom: 90px;
     left: 20px;
     padding: 0;
     border-style: none;
