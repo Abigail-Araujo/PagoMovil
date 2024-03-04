@@ -9,7 +9,9 @@ h1{
     text-align: center;
 }
 
+/* forma del telefono*/
 .telefono{
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -21,6 +23,7 @@ h1{
     background-color: rgb(0, 0, 0);
 
 }
+/* fondo de pantalla del menu principal*/
 #fondotlf {
     width: 295px;
     height: 630px;
@@ -31,6 +34,7 @@ h1{
     top: 15px;
 }
 #cam{
+    z-index: 4;
     width: 25px;
     height: 25px;
     border-radius: 50%;
@@ -68,12 +72,13 @@ h1{
     transition: filter 0.1s ease-in-out;
 }
 
+/*Reloj del menu principal*/
 .reloj{
     color: rgb(255, 255, 255);
     text-align: center;
 }
 
-#hora{
+.reloj .hora{
 position:absolute;
 top: 55px;
 left: 60px;
@@ -81,7 +86,7 @@ font-weight: 600;
 font-size: 35pt;
 }
 
-#fecha{
+.reloj .fecha{
     position:absolute;
     top: 155px;
     left: 120px;
@@ -89,3 +94,497 @@ font-size: 35pt;
     font-size: 12pt;
 }
 
+.barra-estado {
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left:0px;
+    width: 94%;
+    padding: 5px 10px;
+    background-color: rgba(0, 0, 0, 0.3); /* Fondo semi-transparente */
+    color: white; /* Color del texto */
+}
+
+.icono-bateria {
+    display: block;
+    width: 24px; /* Ajusta según el tamaño de tu ícono */
+    height: 24px; /* Ajusta según el tamaño de tu ícono */
+    background: url('icono-bateria.png') no-repeat center center;
+    background-size: contain;
+}
+
+/* Asegúrate de que la hora se actualice con tu función de JavaScript */
+.barra-estado .hora {
+    font-size: 16px; /* Ajusta según tus preferencias */
+}
+
+.barra-inferior {
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    left: 0px;
+    bottom: 0;
+    width: 100%;
+    padding: 5px 0; /* Ajuste del padding para reducir la altura */
+    background-color: rgba(255, 255, 255, 0.3);
+    border-top-left-radius: 30px; /* Bordes superiores más redondeados */
+    border-top-right-radius: 30px; /* Bordes superiores más redondeados */
+    border-bottom-left-radius: 15px; /* Nuevos bordes inferiores redondeados */
+    border-bottom-right-radius: 15px; /* Nuevos bordes inferiores redondeados */
+}
+
+.boton {
+    display: flex;
+    justify-content: center;
+    width: 40px; /* Ancho reducido */
+    height: 40px; /* Altura reducida */
+    background-color: transparent; /* Fondo transparente */
+    border-radius: 50%; /* Forma redondeada */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.boton::before {
+    content: '';
+    display: block;
+    width: 100%; /* Ajuste para que la imagen ocupe todo el botón */
+    height: 100%; /* Ajuste para que la imagen ocupe todo el botón */
+    background: url('icono-deseado.png') no-repeat center center;
+    background-size: cover; /* Ajuste para que la imagen cubra todo el botón */
+}
+
+/*aqui poner el icono para el boton de regresar y el de la casita*/
+.boton.atras::before {
+    background-image: url('icono-atras.png');
+}
+
+.boton.inicio::before {
+    background-image: url('icono-inicio.png');
+}
+
+/*contenido de la app al abrirla*/
+#appContent {
+    width: 295px;
+    height: 630px;
+    border-radius: 15px;
+    background: linear-gradient(to right, rgb(255, 153, 102), rgb(255, 94, 98));
+    background-image: url('imagenes/fondo de la app.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -4px;
+    padding: 15px;
+    position: absolute;
+    top: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#pantallaSMS{
+    width: 295px;
+    height: 630px;
+    border-radius: 15px;
+    background: #fefffa;
+    box-shadow: -4px;
+    padding: 15px;
+    position: absolute;
+    top: 15px;
+    
+}
+
+#barraContacto{
+    display: flex;
+    z-index: 1;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left:0px;
+    width: 94%;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    padding: 5px 10px;
+    background-color: rgba(245, 143, 26, 0.781);
+    color: #000
+}
+
+#contacto{
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    font-size: 14pt;
+    font-weight: 600;
+}
+
+.mensajes {
+    position: absolute;
+    top: 90px;
+    width: 295px;
+    border: 1px solid #ddd;
+    overflow-y: auto; /* Activar scroll vertical */
+    font-size: 10pt;
+}
+
+.mensaje {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    max-width: 320px;
+}
+
+.mensaje.recibido {
+    background-color: #fff1b3;
+    float: left;
+    clear: both;
+}
+
+.mensaje.enviado {
+    background-color: #ffc889;
+    float: right;
+    clear: both;
+}
+
+#formSMS {
+    position: absolute;
+    top: 500px;
+    width: 295px;
+}
+
+#mensaje {
+    width: 273px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#enviarSMS {
+    margin-top: 5px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    font-size: 8pt;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#logoInicio{
+    width: 292px;
+    height: 248px;
+    position: absolute;
+    top: 70px;
+    left: 18px;
+
+}
+
+/*boton de inicio de sesion*/
+#loginButton {
+    position: absolute;
+    top: 54%;
+    left: 24%;
+    background-color: rgb(245, 106, 26);
+    color: #fff;
+    width: 174px;
+    height: 45px;
+    cursor: pointer;
+    font-size: 17px;
+    border-radius: 1rem;
+    border: none;
+    transition: 0.1s;
+}
+
+#loginButton:active {
+    background: radial-gradient(circle farthest-corner at 10% 20%, rgb(234, 103, 27) 17.8%, rgb(251, 92, 0) 100.2%)
+}
+
+
+/*pantalla que se abre despues de darle al boton de iniciar sesion */
+#loginContent {
+    width: 295px;
+    height: 630px;
+    border-radius: 15px;
+    background: linear-gradient(to right, rgb(255, 153, 102), rgb(255, 94, 98));
+    background-image: url('imagenes/fondo login.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -4px;
+    padding: 15px;
+    position: absolute;
+    top: 15px;
+}
+
+/*este es el formulario donde se llenan las cosas*/
+#registerForm {
+    background: linear-gradient(to right, rgb(245, 143, 26), rgba(255, 132, 0, 0.929));
+    border-radius: 15px;
+    padding: 20px;
+    width: 242px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#registerForm label {
+    color: rgb(254, 251, 251);
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#registerForm input[type="text"], #registerForm input[type="password"] {
+    width: 100%;
+    padding: 4px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: 1px solid rgb(255, 94, 98);
+}
+
+
+#registerForm input[type="button"] {
+    background-color: rgb(255, 94, 0);
+    color: #fff;
+    /* Agrega un borde blanco de 2px */
+    border: 1px solid white;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#registerForm input[type="button"]:hover {
+    background-color: rgb(255, 77, 0);
+}
+
+
+/*aqui va la pagina principal del banco, hay que cambiarlas por la que disenies*/
+/*pantalla del banco*/
+#paginaPrincipal{
+    width: 295px;
+    height: 630px;
+    border-radius: 15px;
+    background: linear-gradient(to right, rgb(255, 153, 102), rgb(255, 94, 98));
+    background-image: url('imagenes/fondo pago movil.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-shadow: -4px;
+    padding: 15px;
+    position: absolute;
+    top: 15px;
+
+}
+
+/* Estilos CSS para el formulario de pago móvil */
+/*como sufri en esta verga*/
+
+#tipo-documento {
+    /* Posición y tamaño */
+    position: absolute;
+    top: 23%;
+    left: 5%;
+    width: 20%;
+    height: 5%;
+
+    /* Borde */
+    border: 2px solid rgb(255, 153, 102); /* Ajusta el color según lo necesites */
+    border-radius: 5px;
+}
+
+/*con esto editas el texto de cada vaina*/
+label[for="numero-cedula"] {
+    position: absolute;
+    top: 19%;
+    left: 3%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: rgb(255, 153, 102);
+}
+
+#numero-cedula{
+    /* Posición y tamaño */
+    position: absolute;
+    top: 23%;
+    left: 28%;
+    width: 200px;
+    height: 5%;
+
+    /* Borde */
+    border: 2px solid rgb(255, 153, 102); /* Ajusta el color según lo necesites */
+    border-radius: 5px;
+}
+
+label[for="banco"] {
+    position: absolute;
+    top: 30%;
+    left: 3%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: rgb(255, 153, 102);
+}
+
+#banco{
+     /* Posición y tamaño */
+     position: absolute;
+    top: 34%;
+    left: 5%;
+    width: 283px;
+    height: 5%;
+
+     /* Borde */
+     border: 2px solid rgb(255, 153, 102); /* Ajusta el color según lo necesites */
+     border-radius: 5px;
+
+}
+
+label[for="telefono"] {
+    position: absolute;
+    top: 40%;
+    left: 3%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: rgb(255, 153, 102);
+}
+#telefono{
+     /* Posición y tamaño */
+     position: absolute;
+    top: 44%;
+    left: 5%;
+    width: 282px;
+    height: 4%;
+     /* Borde */
+     border: 2px solid rgb(255, 153, 102); /* Ajusta el color según lo necesites */
+     border-radius: 5px;
+
+}
+
+
+label[for="monto"] {
+    position: absolute;
+    top: 51%;
+    left: 2%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: rgb(255, 153, 102);
+}
+#monto{
+
+    position: absolute;
+    top: 55%;
+    left: 6%;
+    width: 282px;
+    height: 4%;
+     /* Borde */
+     border: 2px solid rgb(255, 153, 102); /* Ajusta el color según lo necesites */
+     border-radius: 5px;
+}
+
+
+label[for="concepto"] {
+    position: absolute;
+    top: 60%;
+    left: 2%;
+    margin-bottom: 5px;
+    padding-left: 10px;
+    color: rgb(255, 153, 102);
+}
+
+#concepto{
+
+    /* Posición y tamaño */
+    position: absolute;
+    top: 64%;
+    left: 6%;
+    width: 283px;
+    height: 4%;
+
+    /* Borde */
+    border: 2px solid rgb(255, 153, 102); /* Ajusta el color según lo necesites */
+    border-radius: 5px;
+
+
+
+}
+
+
+
+
+
+
+/* Estilos para el botón 'Pagar' */
+.boton-pagar {
+    position: absolute;
+    top: 71%;
+    left: 6%;
+    width: 155px;
+    height: auto;
+
+    padding: 10px 20px; /* Tamaño del relleno */
+    font-size: 18px; /* Tamaño de la fuente */
+    background-color: rgb(255, 77, 0); /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+    margin-right: 5px; /* Margen a la derecha */
+}
+
+/* Estilos para el botón 'Limpiar' */
+.boton-limpiar {
+    position: absolute;
+    top: 80%;
+    left: 6%;
+    width: 155px;
+    height: auto;
+    padding: 10px 20px; /* Tamaño del relleno */
+    font-size: 18px; /* Tamaño de la fuente */
+    background-color: rgb(255, 77, 0); /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    border-radius: 20px; /* Bordes redondeados */
+    cursor: pointer; /* Cursor tipo puntero */
+}
+
+.bordeRojo {
+    border: 2px solid red !important; /* Asegura que este estilo tenga prioridad */
+}
+
+
+/*hay fe, esto lo pasamos con 20*/
