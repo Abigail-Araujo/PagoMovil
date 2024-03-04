@@ -24,8 +24,7 @@
 
             <div class="barra-estado">
                 <div class="hora">12:45</div> <!-- La hora se actualizará con tu función JS -->
-                <div class="icono-bateria"></div> <!-- Asegúrate de tener un ícono de batería -->
-            </div>
+                <div class="icono-bateria"></div>
 
              <!--reloj de la pantalla principal-->
             <div class="reloj">
@@ -44,58 +43,32 @@
 
         </div>
 
-
-
-
-
-
-
-
-
         <div id="pantallaSMS" style="display: none;">
             <div id="cam"></div>
             <div class="barra-estado">
                 <div class="hora">12:45</div> <!-- La hora se actualizará con tu función JS -->
-                <div class="icono-bateria"></div> <!-- Asegúrate de tener un ícono de batería -->
+                <div class="icono-bateria"></div>
             </div>
             <div id="barraContacto">
                 <div id="contacto">
-                <img src="/imagenes/Regresar.svg" alt="icono volver" style="width: 20px; margin-right: 10px;">
-                <img src="/imagenes/user.png" alt="icono de contacto" style="width: 50px; margin-right: 10px">
-                <p>2662</p>
+                    <img src="/imagenes/Regresar.svg" alt="icono volver" style="width: 20px; margin-right: 10px;">
+                    <img src="/imagenes/user.png" alt="icono de contacto" style="width: 50px; margin-right: 10px">
+                    <p>2662</p>
                 </div>
             </div>
-                    <section class="mensajes" style="height: 400px">
-                        <div class="mensaje recibido">
-                            Hola, ¿cómo estás?
-                        </div>
-                        <div class="mensaje enviado">
-                            Muy bien, gracias. ¿Y tú?
-                        </div>
-                    </section>
-                    <form id="formSMS" action="#">
-                        <input type="text" id="mensaje" placeholder="Escribe tu mensaje aquí">
-                        <button id="enviarSMS" type="submit">Enviar</button>
-                    </form>
+            <section class="mensajes" style="height: 400px">
+                <!-- Aquí aparecerán los mensajes enviados y recibidos -->
+            </section>
+            <form id="formSMS" action="#">
+                <input type="text" id="mensaje" placeholder="Escribe tu mensaje aquí">
+                <button id="enviarSMS" type="submit" onclick="enviarMensaje()">Enviar</button>
+            </form>
             <div class="barra-inferior">
                 <button class="boton atras" onclick="closeSMS1()" ></button>
                 <button class="boton inicio" onclick=""></button>
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
          <!--pantalla inicial de la app-->
         <div id="appContent" style="display: none;">
             <div id="cam"></div>
@@ -117,7 +90,7 @@
         <div id="loginContent" style="display: none">
             <div class="barra-estado">
                 <div class="hora">12:45</div> <!-- La hora se actualizará con tu función JS -->
-                <div class="icono-bateria"></div> <!-- Asegúrate de tener un ícono de batería -->
+                <div class="icono-bateria"></div>
             </div>
             <div id="cam"></div>
              <!--lo del inicio de sesion-->
@@ -138,17 +111,18 @@
         <!--pantalla de la aplicacion como tal, aqui va el disenio que le hagas-->
         <div id="paginaPrincipal" style="display: none;">
             <div class="barra-estado">
-                <div class="hora">12:45</div> <!-- La hora se actualizará con tu función JS -->
-                <div class="icono-bateria"></div> <!-- Asegúrate de tener un ícono de batería -->
+                <div class="hora">12:45</div>
+                <div class="icono-bateria"></div>
             </div>
             <div id="cam"></div>
+                <!--aqui empieza el formulario que se llena para hacer el pago movil-->
                 <form id="validacion" novalidate>
                     <div class="tipo-documento">
                         <select id="tipo-documento" name="tipo-documento">
                             <option value="V">V</option>
                             <option value="E">E</option>
                             <option value="J">J</option>
-                            <!-- Agrega aquí más tipos de documentos si es necesario -->
+                            <!--no se si poner mas documentos aca, creo que asi esta bien-->
                         </select>
                     </div>
                     <div class="numero-cedula">
@@ -161,7 +135,7 @@
                     <div class="banco">
                         <label for="banco">Banco:</label>
                         <select id="banco" name="banco" required>
-                            <option value="">Seleccionar banco</option>
+                            <option value="">Smart Banco</option>
                             <option value="">Banco de Venezuela</option>
                             <option value="">Mercantil</option>
                             <option value="">Bancamiga</option>
@@ -174,7 +148,7 @@
                     </div>
 
                     <div class="tlf">
-                        <label for="telefono">Teléfono:</label>
+                        <label for="telefono1">Teléfono:</label>
                         <input type="tel" id="telefono" name="telefono" required>
 
                     </div>
@@ -200,11 +174,28 @@
                     </div>
 
                 </form>
-                
+
             </div>
+
+            <!---->
+            <div id="pantallaComprobante" style="display: none;">
+                <div class="barra-estado">
+                    <div class="hora">12:45</div>
+                    <div class="icono-bateria"></div>
+                </div>
+                <div id="cam"></div>
+
+                <div id="dineroP"></div>
+                <div id="operacion"></div>
+                <div id="conceptoP"></div>
+                <div id="numero-cedulaP"></div>
+                <div id="bancoP"></div>
+                <p class="fecha"></p>
+
+            </div>
+
 
         </div>
 
-    </div>
 </body>
 </html>
